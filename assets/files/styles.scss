@@ -1,0 +1,224 @@
+@mixin mqMax($size){
+    @media only screen and (max-width: $size){
+        @content
+    }
+};
+@mixin mqMin($size){
+    @media only screen and (min-width: $size){
+        @content
+    }
+};
+
+@mixin btn($col){
+    color: $col!important;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    background: transparent;
+    transition: all 0.3s ease;
+    font-family: 'Baloo Da', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    border-radius: 50em;
+    vertical-align: middle;
+    margin: 0 0.125rem;
+    border: 0 none;
+    letter-spacing: -0.075em;
+    padding: 0.5em 1.5em;
+    cursor: pointer;
+}
+
+@mixin btnBorder($col1,$col2){
+    color: var(--pri-txt);
+    transition: background .5s ease-in-out;
+    background: linear-gradient(0deg
+, $col1 0%, $col2 100%);
+}
+
+@mixin rect($col){
+    stroke: $col;
+    width: inherit;
+    height: inherit;
+    fill: transparent;
+    stroke-width: 0.275em;
+}
+
+$navCol: #010D14;
+$col1: #fff;
+$primaryBtn: #1A252C;
+$link: #fbb03b;
+
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-family: 'Roboto', sans-serif;
+    max-width: 100%;
+}
+html{
+    scroll-behavior: smooth!important;
+}
+body{
+    display:grid;
+    max-width: 90%;
+    margin:0 auto;
+    background: #EFEFEF;
+    @include mqMax(1335px){
+        max-width: 95%;
+    }
+    @include mqMax(600px){
+        max-width: 100%;
+    }
+}
+a{
+    text-decoration: none;
+    color: $link;
+}
+
+svg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    stroke-dasharray: 250% 50%;
+    stroke-dashoffset: 10%;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 0.7s ease-in-out;
+    &:hover{
+        stroke-dashoffset: 160%;
+    }
+    rect{
+        @include rect(#F4D047);
+    }
+}
+
+nav{
+    align-items: center;
+    padding: .4em;
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: space-between;
+    background: $navCol;
+    .logo{
+        width: 7em;
+        cursor: pointer;
+    }
+    .btns{
+        justify-self: end;
+        button{
+            position:relative;
+            @include btn($col1);
+            rect{
+                @include rect(#494949);
+            }             
+        }
+    }
+}
+
+.offer{
+    display: grid;
+    grid-template-rows: reapeat(5, 1fr);
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    .txt{
+        text-align: center;
+        font-size: 3em;
+        font-weight: 600;
+        padding: 0.5em 0;
+        border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;
+        padding-bottom: 1.5em;
+        color: $col1;
+        background: $navCol;
+    }
+    .video{
+        height: 25em;
+        video{
+            height: 100%;
+            width: 100%;
+        }
+    }
+    .offerBtn{
+            position:relative;
+            width: 10em;
+            @include btn($primaryBtn);
+            @include btnBorder(#d3812e,#e6b33e);
+            font-size: 1.5em;
+            padding: 0.5em 2em;
+            justify-self: center;
+        }
+    .rules{
+        border-top: solid .2em #000;
+        color: $col1;
+        text-align: center;
+        padding: 2em 4em;
+        background: rgba(0,0,0,0.5);
+    }
+    .list{
+        display: grid;
+        grid-template-columns: 2fr 1fr 2fr 1fr 2fr;
+        justify-items: center;
+        padding: 3em 0;
+        background: #EFEFEF;
+    }
+}
+
+.popup{
+    position: fixed;
+    width: 90%;
+    margin: 0 auto;
+    display:grid;
+    bottom: -20em;
+    transition: bottom 500ms ease-in-out;
+    @include mqMax(1335px){
+        max-width: 95%;
+    }
+    @include mqMax(600px){
+        max-width: 100%;
+    }
+}
+
+footer{
+    display:grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, 0.5fr);
+    justify-items: center;
+    align-content: center;
+    text-align: center;
+    padding-top: 1em;
+    color: $col1;
+    background: $navCol;
+    .copyright{
+        margin: 1em 3em;
+        padding: 1em;
+        color: $navCol;
+        background: #fff;
+        .y{
+            color: $link;
+        }
+    }
+    .terms{
+        text-align: left;
+        margin: 1em 3em;
+        padding: 1em;
+        color: $navCol;
+        background: #fff;
+
+        tr{
+            margin: .5em .2em;
+        }
+        .TermsPageInnerTable{
+            margin:1.5rem 0
+        }
+        .TextBold{
+            margin-top: 1em;
+            font-weight: 800;
+        }
+        #tblOuterContent td {
+            padding: .5em;
+        }
+    }
+}
