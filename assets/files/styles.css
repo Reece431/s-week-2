@@ -205,11 +205,19 @@ nav .btns .loginBtn {
 .offer .sign p {
   color: #1A252C;
   font-size: 5em;
+  font-size: 2.8em;
+  text-transform: uppercase;
 }
 
-@media only screen and (max-width: 616px) {
+@media only screen and (max-width: 968px) {
   .offer .sign p {
-    font-size: 3em;
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 474px) {
+  .offer .sign p {
+    margin-top: 1em;
   }
 }
 

@@ -181,8 +181,13 @@ nav{
         p{
             color: $primaryBtn;
             font-size: 5em;
-            @include mqMax(616px){
-                font-size: 3em;
+            font-size: 2.8em;
+            text-transform: uppercase;
+            @include mqMax(968px){
+                font-size: 2em;
+            }
+            @include mqMax(474px){
+                margin-top: 1em;
             }
         }
     }
