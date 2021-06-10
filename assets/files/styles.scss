@@ -94,7 +94,7 @@ svg{
 
 nav{
     align-items: center;
-    padding: .4em;
+    padding: .4em 1em;
     display:grid;
     grid-template-columns: repeat(2, 1fr);
     justify-items: space-between;
@@ -151,6 +151,7 @@ nav{
         border-bottom-right-radius: 50%;
         padding-bottom: 1em;
         color: $navCol;
+        cursor: pointer;
         background: $col1;
         z-index: $i;
         @include mqMax(1222px){
@@ -176,6 +177,7 @@ nav{
         background-position: center;
         background-size: contain;
         background-repeat:no-repeat;
+        cursor: pointer;
         p{
             color: $primaryBtn;
             font-size: 5em;
