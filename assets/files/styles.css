@@ -215,12 +215,6 @@ nav .btns .loginBtn {
   }
 }
 
-@media only screen and (max-width: 474px) {
-  .offer .sign p {
-    margin-top: 1em;
-  }
-}
-
 .offer .offerBtn {
   position: relative;
   width: 10em;
