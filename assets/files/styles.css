@@ -25,6 +25,11 @@ body {
   }
 }
 
+button a {
+  color: inherit;
+  font-family: inherit;
+}
+
 a {
   text-decoration: none;
   color: #fbb03b;
@@ -161,7 +166,6 @@ nav .btns .loginBtn {
   border-bottom-right-radius: 50%;
   padding-bottom: 1em;
   color: #010D14;
-  cursor: pointer;
   background: #fff;
   z-index: 10;
 }

@@ -68,6 +68,12 @@ body{
         max-width: 100%;
     }
 }
+button{
+    a{
+        color: inherit;
+        font-family: inherit;
+    }
+}
 a{
     text-decoration: none;
     color: $link;
@@ -151,7 +157,6 @@ nav{
         border-bottom-right-radius: 50%;
         padding-bottom: 1em;
         color: $navCol;
-        cursor: pointer;
         background: $col1;
         z-index: $i;
         @include mqMax(1222px){
